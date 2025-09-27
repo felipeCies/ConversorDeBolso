@@ -37,8 +37,8 @@
 
     <Button
         android:id="@+id/botaoVoltar"
-        android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
         android:text="Voltar ao menu principal"
         android:textAlignment="center"
         android:textColorLink="#C3B388FF"

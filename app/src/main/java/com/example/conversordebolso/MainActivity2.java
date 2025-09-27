@@ -68,25 +68,22 @@ public class MainActivity2 extends AppCompatActivity {
         double celsius;
 
 
-        switch (de) {
-            case "Fahrenheit":
-                celsius = (valor - 32) * 5/9;
-                break;
-            case "Kelvin":
-                celsius = valor - 273.15;
-                break;
-            default:
-                celsius = valor;
+        if (de.equals("Fahrenheit")) {
+            celsius = (valor - 32) * 5/9;
+        } else if (de.equals("Kelvin")) {
+            celsius = valor - 273.15;
+        } else {
+            celsius = valor;
         }
 
 
-        switch (para) {
-            case "Fahrenheit":
-                return (celsius * 9/5) + 32;
-            case "Kelvin":
-                return celsius + 273.15;
-            default:
-                return celsius;
+        if (para.equals("Fahrenheit")) {
+            return (celsius * 9/5) + 32;
+        } else if (para.equals("Kelvin")) {
+            return celsius + 273.15;
+        } else {
+            return celsius;
         }
     }
+
 }
