@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/botaoMoedas"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:insetTop="300dp"
+        android:insetRight="10dp"
+        android:text="Conversor de Moedas" />
+
+    <Button
+        android:id="@+id/botaoMedidas"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:insetTop="300dp"
+        android:insetRight="10dp"
+        android:text="Conversor de Medidas" />
+
+</LinearLayout>
