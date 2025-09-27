@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         editQuantidadeMoeda = findViewById(R.id.editQuantidadeMoeda);
         editCotacao = findViewById(R.id.editCotacao);
         textResultado = findViewById(R.id.textResultado);
-        botaoVoltar = findViewById(R.id.botaoVoltar); // inicializa aqui
+        botaoVoltar = findViewById(R.id.botaoVoltar);
 
         // ação do botão voltar
         botaoVoltar.setOnClickListener(new View.OnClickListener() {

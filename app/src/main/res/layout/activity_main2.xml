@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Converter Dolar em Real"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    android:padding="16dp">
 
     <EditText
-        android:id="@+id/editQuantidadeMoeda"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:hint="Valor Original"
-        android:inputType="number|numberDecimal" />
-
-    <EditText
-        android:id="@+id/editCotacao"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:ems="10"
-        android:hint="Digite A Cotação Da Moeda"
-        android:inputType="number|numberDecimal" />
-
-    <TextView
-        android:id="@+id/textResultado"
+        android:id="@+id/editValorTemp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Resultado:"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:hint="Valor da Temperatura que Deseja Converter"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/spinnerDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinnerPara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnConverterTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Converter" />
+
+    <TextView
+        android:id="@+id/textResultadoTemp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="converter"
-        android:text="Converter" />
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <Button
+        android:id="@+id/botaoVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:text="Voltar ao menu principal"
+        android:textAlignment="center"
+        android:textColorLink="#C3B388FF"
+        android:textSize="12sp" />
+
 </LinearLayout>

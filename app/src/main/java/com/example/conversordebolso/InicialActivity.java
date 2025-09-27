@@ -14,7 +14,7 @@ public class InicialActivity extends AppCompatActivity{
         setContentView(R.layout.activity_inicial);
 
         Button botaoMoedas = findViewById(R.id.botaoMoedas);
-        Button botaoMedidas = findViewById(R.id.botaoMedidas);
+        Button botaoMedidas = findViewById(R.id.botaoTemperatura);
 
         botaoMoedas.setOnClickListener(new View.OnClickListener() {
             @Override

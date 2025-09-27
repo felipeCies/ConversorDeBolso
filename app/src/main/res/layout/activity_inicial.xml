@@ -18,12 +18,12 @@
         android:text="Conversor de Moedas" />
 
     <Button
-        android:id="@+id/botaoMedidas"
+        android:id="@+id/botaoTemperatura"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:insetTop="300dp"
         android:insetRight="10dp"
-        android:text="Conversor de Medidas" />
+        android:text="Conversor de Temperatura" />
 
 </LinearLayout>

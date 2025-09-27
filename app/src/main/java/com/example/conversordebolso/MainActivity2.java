@@ -1,39 +1,92 @@
 package com.example.conversordebolso;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    private EditText editQuantidadeMoeda;
-    private EditText editCotacao;
-    private TextView textResultado;
+    private EditText editValorTemp;
+    private Spinner spinnerDe, spinnerPara;
+    private TextView textResultadoTemp;
+    private Button btnConverterTemp, botaoVoltar;
 
+    String[] unidades = {"Celsius", "Fahrenheit", "Kelvin"};
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
-        editQuantidadeMoeda = findViewById(R.id.editQuantidadeMoeda);
-        editCotacao = findViewById(R.id.editCotacao);
-        textResultado = findViewById(R.id.textResultado);
+        editValorTemp = findViewById(R.id.editValorTemp);
+        spinnerDe = findViewById(R.id.spinnerDe);
+        spinnerPara = findViewById(R.id.spinnerPara);
+        textResultadoTemp = findViewById(R.id.textResultadoTemp);
+        btnConverterTemp = findViewById(R.id.btnConverterTemp);
+        botaoVoltar = findViewById(R.id.botaoVoltar);
 
+        // Adapter para popular os spinners
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, unidades);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDe.setAdapter(adapter);
+        spinnerPara.setAdapter(adapter);
+
+        btnConverterTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double valor = Double.parseDouble(editValorTemp.getText().toString());
+                String de = spinnerDe.getSelectedItem().toString();
+                String para = spinnerPara.getSelectedItem().toString();
+
+                double resultado = converterTemperatura(valor, de, para);
+                textResultadoTemp.setText("Resultado: " + String.format("%.1f", resultado) + " " + para);
+            }
+        });
+
+        botaoVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, InicialActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
-
-    public void converter (View view){
-
-        double quantidadeMoeda = Double.parseDouble(editQuantidadeMoeda.getText().toString());
-        double cotacao = Double.parseDouble(editCotacao.getText().toString());
-        double resultado = quantidadeMoeda * cotacao;
-
-        textResultado.setText("Valor convertido: R$" + resultado);
+    private double converterTemperatura(double valor, String de, String para) {
+        double celsius;
 
 
+        switch (de) {
+            case "Fahrenheit":
+                celsius = (valor - 32) * 5/9;
+                break;
+            case "Kelvin":
+                celsius = valor - 273.15;
+                break;
+            default:
+                celsius = valor;
+        }
+
+
+        switch (para) {
+            case "Fahrenheit":
+                return (celsius * 9/5) + 32;
+            case "Kelvin":
+                return celsius + 273.15;
+            default:
+                return celsius;
+        }
     }
-
 }
