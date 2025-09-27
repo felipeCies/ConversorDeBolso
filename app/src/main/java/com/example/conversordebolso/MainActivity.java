@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         textResultado = findViewById(R.id.textResultado);
         botaoVoltar = findViewById(R.id.botaoVoltar);
 
-        // ação do botão voltar
+
         botaoVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

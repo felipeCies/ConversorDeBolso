@@ -34,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnConverterTemp = findViewById(R.id.btnConverterTemp);
         botaoVoltar = findViewById(R.id.botaoVoltar);
 
-        // Adapter para popular os spinners
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, unidades);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
