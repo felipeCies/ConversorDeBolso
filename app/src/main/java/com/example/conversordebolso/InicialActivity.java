@@ -23,6 +23,7 @@ public class InicialActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
         botaoMedidas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
