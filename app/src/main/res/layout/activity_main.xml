@@ -1,60 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <EditText
+        android:id="@+id/editValorUSD"
+        android:hint="Digite o valor em USD"
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Converter Para Real"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/editQuantidadeMoeda"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:ems="10"
-        android:hint="Valor Original"
-        android:inputType="number|numberDecimal" />
-
-    <EditText
-        android:id="@+id/editCotacao"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:ems="10"
-        android:hint="Digite A Cotação Da Moeda"
-        android:inputType="number|numberDecimal" />
+    <Button
+        android:id="@+id/btnConverter"
+        android:text="Converter para BRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textResultado"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resultado:"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="20dp"
+        android:text="Valor em BRL"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="97dp"
-        android:onClick="converter"
-        android:text="Converter" />
-
-    <Button
-        android:id="@+id/botaoVoltar"
-        android:layout_width="230dp"
-        android:layout_height="73dp"
-        android:text="Voltar ao menu principal"
-        android:textAlignment="center"
-        android:textColorLink="#C3B388FF"
-        android:textSize="12sp" />
+        android:id="@+id/btnVoltar"
+        android:text="Voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"/>
 </LinearLayout>

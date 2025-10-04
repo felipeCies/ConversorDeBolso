@@ -41,15 +41,33 @@ public class MainActivity2 extends AppCompatActivity {
         spinnerDe.setAdapter(adapter);
         spinnerPara.setAdapter(adapter);
 
+
         btnConverterTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double valor = Double.parseDouble(editValorTemp.getText().toString());
-                String de = spinnerDe.getSelectedItem().toString();
-                String para = spinnerPara.getSelectedItem().toString();
 
-                double resultado = converterTemperatura(valor, de, para);
-                textResultadoTemp.setText("Resultado: " + String.format("%.1f", resultado) + " " + para);
+                String valorTexto = editValorTemp.getText().toString();
+
+
+                if (valorTexto.trim().isEmpty()) {
+
+                    textResultadoTemp.setText(" Insira um valor válido para converter.");
+                    return;
+                }
+
+
+                try {
+                    double valor = Double.parseDouble(valorTexto);
+                    String de = spinnerDe.getSelectedItem().toString();
+                    String para = spinnerPara.getSelectedItem().toString();
+
+                    double resultado = converterTemperatura(valor, de, para);
+                    textResultadoTemp.setText("Resultado: " + String.format("%.1f", resultado) + " " + para);
+
+                } catch (NumberFormatException e) {
+
+                    textResultadoTemp.setText("⚠️ Valor inválido. Insira apenas números.");
+                }
             }
         });
 
